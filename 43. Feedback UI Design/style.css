@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(255, 255, 0, 0.419);
+}
+
+.ui {
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 0.5px rgba(128, 128, 128, 0.5);
+  background-color: white;
+}
+
+.feedback-container {
+  width: 450px;
+  height: 300px;
+  row-gap: 30px;
+  z-index: 1;
+}
+
+.heading-container {
+  display: inline-block;
+  width: 270px;
+  height: auto;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(119, 119, 119);
+}
+
+.emoji-container {
+  display: flex;
+  column-gap: 20px;
+}
+
+.emoji-box {
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  row-gap: 10px;
+  color: rgb(110, 110, 110);
+}
+
+img {
+  width: 40px;
+}
+
+.active-emoji {
+  box-shadow: 0 0 5px 0.1px rgba(128, 128, 128, 0.5);
+}
+
+.btn {
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.756);
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 0 3px 3px rgba(128, 128, 128, 0.411);
+  transition: all 0.1s linear;
+}
+
+.btn:active {
+  transform: scale(0.99);
+  box-shadow: none;
+}
+
+.submitted {
+  animation: feedback-submission 0.3s linear forwards;
+}
+
+@keyframes feedback-submission {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.feedback-report-container {
+  width: 550px;
+  height: 270px;
+  row-gap: 25px;
+  color: grey;
+  animation: report 0.3s linear forwards;
+  display: none;
+}
+
+.heart-container {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.feedback-report-footer {
+  font-size: 17px;
+  font-weight: bold;
+  width: 60%;
+  text-align: center;
+}
+
+@keyframes report {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.active-report {
+  display: flex;
+}

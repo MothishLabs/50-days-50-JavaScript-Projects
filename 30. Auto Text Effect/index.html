@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="text-container">
+      <div>
+        <p class="animated-text"></p>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.text-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(225, 140, 59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.animated-text {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+
+
+"use strict";
+
+let textEle = document.querySelector(".animated-text");
+
+let text = "We Love Programming!";
+let splitted_text = text.split("");
+let store_words = [];
+let rejoin_words = "";
+
+let index = 0;
+
+let text_Animation = setInterval(() => {
+  if (index < splitted_text.length) {
+    store_words.push(splitted_text[index]);
+    rejoin_words = store_words.join("");
+    console.log(rejoin_words);
+    textEle.textContent = rejoin_words;
+    index++;
+  } else {
+    index = 0;
+    store_words = [];
+    rejoin_words = "";
+  }
+}, 500);

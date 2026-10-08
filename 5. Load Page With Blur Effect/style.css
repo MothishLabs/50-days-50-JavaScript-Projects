@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+.lazy-load-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/pic\ 5.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px);
+  animation: lazy 3.8s forwards;
+}
+
+.loading-value {
+  color: rgb(0 44 73);
+  font-size: 30px;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 100;
+  animation: text-disappear 5s forwards;
+}
+
+@keyframes lazy {
+  0% {
+    filter: blur(30px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes text-disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

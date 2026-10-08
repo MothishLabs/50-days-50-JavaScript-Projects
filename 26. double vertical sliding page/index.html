@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vertical ZigZag Slides</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+      }
+
+      /* LEFT SIDE (30%) */
+      .left {
+        width: 30%;
+        background: #111;
+        color: white;
+        overflow: hidden;
+      }
+
+      .left-content {
+        transition: transform 0.7s ease-in-out;
+      }
+
+      .slide {
+        height: 100vh;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* RIGHT SIDE (70%) */
+      .right {
+        width: 70%;
+        overflow: hidden;
+      }
+
+      .right-content {
+        display: flex;
+        flex-direction: column-reverse; /* KEY FIX */
+        transition: transform 0.7s ease-in-out;
+      }
+
+      .image-slide {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* BUTTONS (CENTER SPLIT LINE) */
+      .buttons {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      button {
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .up {
+        transform: translateY(-15px);
+        background: white;
+      }
+
+      .down {
+        transform: translateY(15px);
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- LEFT CONTENT -->
+      <div class="left">
+        <div class="left-content" id="leftContent">
+          <div class="slide">
+            <h1>Mountain</h1>
+            <p>Beautiful mountains with peaceful atmosphere.</p>
+          </div>
+
+          <div class="slide">
+            <h1>Beach</h1>
+            <p>Relaxing beach with soft sand and waves.</p>
+          </div>
+
+          <div class="slide">
+            <h1>Forest</h1>
+            <p>Green forest filled with nature and wildlife.</p>
+          </div>
+
+          <div class="slide">
+            <h1>City</h1>
+            <p>Modern city with vibrant life and lights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGES -->
+      <div class="right">
+        <div class="right-content" id="rightContent">
+          <div
+            class="image-slide"
+            style="
+              background-image: url(&quot;https://picsum.photos/id/1005/1000/600&quot;);
+            "
+          ></div>
+          <div
+            class="image-slide"
+            style="
+              background-image: url(&quot;https://picsum.photos/id/1011/1000/600&quot;);
+            "
+          ></div>
+          <div
+            class="image-slide"
+            style="
+              background-image: url(&quot;https://picsum.photos/id/1015/1000/600&quot;);
+            "
+          ></div>
+          <div
+            class="image-slide"
+            style="
+              background-image: url(&quot;https://picsum.photos/id/1018/1000/600&quot;);
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="buttons">
+        <button class="up" onclick="slideUp()">↑</button>
+        <button class="down" onclick="slideDown()">↓</button>
+      </div>
+    </div>
+
+    <script>
+      const left = document.getElementById("leftContent");
+      const right = document.getElementById("rightContent");
+      const totalSlides = 4;
+
+      let index = 0;
+
+      function slideDown() {
+        index++;
+        if (index >= totalSlides) index = 0;
+        updateSlide();
+      }
+
+      function slideUp() {
+        index--;
+        if (index < 0) index = totalSlides - 1;
+        updateSlide();
+      }
+
+      function updateSlide() {
+        /* Zig-Zag Animation */
+        left.style.transform = `translateY(-${index * 100}vh)`;
+        right.style.transform = `translateY(${index * 100}vh)`;
+      }
+    </script>
+  </body>
+</html>

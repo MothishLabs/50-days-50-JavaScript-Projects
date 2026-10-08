@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Your Password Strength</h1>
+      <form>
+        <div class="flex-property">
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="Email"
+            placeholder="Enter Email"
+            class="email"
+            required
+          />
+        </div>
+        <div class="flex-property">
+          <label for="pass">Password:</label>
+          <input
+            type="password"
+            id="pass"
+            name="Password"
+            placeholder="Enter Password"
+            class="password"
+          />
+        </div>
+        <div class="pass-message-container">
+          <p class="reply-msg"></p>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

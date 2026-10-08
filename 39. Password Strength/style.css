@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 500px;
+  height: 450px;
+  padding: 40px 30px;
+  border: 2px solid black;
+  position: relative;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+input {
+  font-size: 17px;
+  padding: 8px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(14, 77, 139);
+}
+
+.flex-property {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+
+.pass-message-container {
+  text-align: center;
+  font-size: 17px;
+  height: 17px;
+  color: red;
+}

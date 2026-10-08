@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 250px;
+  background-color: blueviolet;
+  color: white;
+  overflow: hidden;
+}
+
+.allignment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+
+img,
+h1 {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 850px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+  }
+}

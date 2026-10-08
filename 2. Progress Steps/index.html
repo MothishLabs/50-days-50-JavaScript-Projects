@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>progress steps</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-container">
+        <div class="horizontal-bar"></div>
+        <div id="hr-bar-color"></div>
+        <div class="circle active">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+        <div class="circle">5</div>
+      </div>
+      <div class="btn-container">
+        <input
+          type="submit"
+          class="btn-style prev inactive-btn-behaviour"
+          value="pre"
+          disabled
+        />
+        <input
+          type="submit"
+          class="btn-style next active-btn-color"
+          value="next"
+        />
+      </div>
+    </div>
+  </body>
+</html>
